@@ -11,7 +11,7 @@ btn.onclick = () => {
     if (played) return;
     played = true;
     music.play().catch(() => {});
-    btn.querySelector('.btn-label').textContent = '🌹 Para ti, mi Dineily…';
+    btn.querySelector('.btn-label').textContent = 'Para ti, mi Dineily…🌻';
     btn.disabled = true;
     animateBouquet();
     startFallingPetals();
