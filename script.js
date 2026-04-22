@@ -510,24 +510,6 @@ function animateBouquet() {
         sunStem.style.zIndex = '82';
         bouquet.appendChild(sunStem);
 
-        /* Hojas grandes girasol */
-        ['left','right'].forEach((side, si) => {
-            const lx = sunX + (side==='left' ? -(LEAF_W*1.6) : (LEAF_W*0.65));
-            const ly = sunY + SUN_R * 1.4;
-            const lDiv = document.createElement('div');
-            lDiv.style.cssText = `
-                position:absolute;
-                left:${lx}px; top:${ly}px;
-                width:${LEAF_W*1.6}px; height:${LEAF_H*1.6}px;
-                opacity:0; transition:opacity .9s ease; z-index:81;
-            `;
-            lDiv.innerHTML = makeLeafSVG(LEAF_W*1.6, LEAF_H*1.6, side, 120);
-            bouquet.appendChild(lDiv);
-            setTimeout(() => {
-                requestAnimationFrame(() => requestAnimationFrame(() => lDiv.style.opacity = '1'));
-            }, 350 + si*150);
-        });
-
         /* Flor girasol */
         const sunDiv = document.createElement('div');
         sunDiv.style.cssText = `
